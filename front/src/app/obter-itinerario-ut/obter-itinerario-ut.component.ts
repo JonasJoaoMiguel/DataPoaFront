@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ObterItinerarioService } from '../obter-itinerario.service';
 
 @Component({
   selector: 'app-obter-itinerario-ut',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObterItinerarioUtComponent implements OnInit {
 
-  constructor() { }
+  itinerario: Array<any>;
+
+  constructor(private obterItinerarioService: ObterItinerarioService) { }
 
   ngOnInit() {
+  }
+
+  buscar() {
+    this.obterItinerarioService.buscar().subscribe(dados => this.itinerario = dados);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LinhasLotacaoService } from '../linhas-lotacao.service';
 
 @Component({
   selector: 'app-lista-linha-lotacao',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaLinhaLotacaoComponent implements OnInit {
 
-  constructor() { }
+  linhas: Array<any>;
+
+  constructor(private linhaLotacaoService: LinhasLotacaoService) { }
 
   ngOnInit() {
+    /*this.buscar();*/
   }
+
+  buscar() {
+    this.linhaLotacaoService.buscar().subscribe(dados => this.linhas = dados);
+  }
+
 
 }
