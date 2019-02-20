@@ -1,7 +1,11 @@
-<h2>Linha de Lotações</h2>
+<div class="ibox-content">
+    <button class="btn btn-primary" type="button" (click)="buscar()">
+        Linha de Lotações    
+    </button>
 
-<ul>
-    <li *ngFor="let l of linhas">
-        {{l.id}} - {{l.nome}} - {{l.codigo}}
-    </li>
-</ul>
+    <ul>
+        <li *ngFor="let l of linhas">
+            {{l.id}} - {{l.nome}} - {{l.codigo}}
+        </li>
+    </ul>
+</div>
