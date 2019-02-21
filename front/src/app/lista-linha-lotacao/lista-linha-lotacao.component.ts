@@ -12,8 +12,8 @@ export class ListaLinhaLotacaoComponent implements OnInit {
   linhas: Array<any>;
 
   constructor(
-    private linhaLotacaoService: LinhasLotacaoService,
-    private router: Router) { }
+    private linhaLotacaoService: LinhasLotacaoService/*,
+    private router: Router*/) { }
 
   ngOnInit() {
   }

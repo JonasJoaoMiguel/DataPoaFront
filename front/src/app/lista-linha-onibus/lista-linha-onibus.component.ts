@@ -20,4 +20,8 @@ export class ListaLinhaOnibusComponent implements OnInit {
     this.linhaOnibusService.buscar().subscribe(dados => this.linhas = dados);
   }
 
+  voltar() {
+    this.linhaOnibusService.voltar().subscribe(dados => this.linhas = dados);
+  }
+
 }
