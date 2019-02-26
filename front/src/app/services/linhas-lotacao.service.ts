@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class LinhasLotacaoService {
 
-  linhaUrl = '';
+  linhaUrl = 'http://localhost:8080/linhaslotacao/linhalotacao';
 
   constructor(private http: HttpClient) { }
 

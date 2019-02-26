@@ -1,7 +1,28 @@
-<h2>Obter Itinerario</h2>
-
-<ul>
-    <li *ngFor="let l of itinerario">
-        {{l.id}} - {{l.nome}} - {{l.codigo}}
-    </li>
-</ul>
+<div class="ibox-content">
+    <form [formGroup]="teste">
+        <div class="input-group">
+            <span>
+                <button class="btn btn-primary btn-sm" (click)="buscar()">Obter Itinerario de UT</button>
+            </span>
+            <input type="text" formControlName="id" placeholder="Digite aqui o id da UT">
+        </div>
+    </form>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr *ngIf="itinerarios">
+                    <th>ID LINHA</th>
+                    <th>CODIGO</th>
+                    <th>NOME</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of itinerarios">
+                    <td>{{i.idlinha}}</td>
+                    <td>{{i.codigo}}</td>
+                    <td>{{i.nome}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

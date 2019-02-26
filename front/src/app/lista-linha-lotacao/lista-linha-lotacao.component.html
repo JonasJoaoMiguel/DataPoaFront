@@ -1,11 +1,21 @@
 <div class="ibox-content">
-    <button class="btn btn-primary" type="button" (click)="buscar()">
+    <button class="btn btn-primary btn-sm" type="button" (click)="buscar()">
         Linha de Lotações    
     </button>
-
-    <ul>
-        <li *ngFor="let l of linhas">
-            {{l.id}} - {{l.nome}} - {{l.codigo}}
-        </li>
-    </ul>
+    <table class="table">
+        <thead>
+            <tr *ngIf="linhas">
+                <th>ID</th>
+                <th>NOME</th>
+                <th>CODIGO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of linhas">
+                <td>{{l.id}}</td>
+                <td>{{l.nome}}</td>
+                <td>{{l.codigo}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

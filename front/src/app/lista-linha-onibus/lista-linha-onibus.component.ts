@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LinhasOnibusService } from '../linhas-onibus.service';
+import { LinhasOnibusService } from '../services/linhas-onibus.service';
 
 @Component({
   selector: 'app-lista-linha-onibus',
@@ -13,15 +13,10 @@ export class ListaLinhaOnibusComponent implements OnInit {
   constructor(private linhaOnibusService: LinhasOnibusService) { }
 
   ngOnInit() {
-    /*this.buscar();*/
   }
 
   buscar() {
-    this.linhaOnibusService.buscar().subscribe(dados => this.linhas = dados);
-  }
-
-  voltar() {
-    this.linhaOnibusService.voltar().subscribe(dados => this.linhas = dados);
+    this.linhaOnibusService.buscarLinhas().subscribe(dados => this.linhas = dados);
   }
 
 }

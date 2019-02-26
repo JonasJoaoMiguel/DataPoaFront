@@ -8,7 +8,7 @@ export class LinhasOnibusService {
 
   constructor(private http: HttpClient) { }
 
-  buscar() {
+  buscarLinhas() {
     return this.http.get<any[]>(`${this.linhaUrl}`);
   }
 

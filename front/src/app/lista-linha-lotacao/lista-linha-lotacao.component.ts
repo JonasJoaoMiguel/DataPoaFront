@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LinhasLotacaoService } from '../linhas-lotacao.service';
+import { LinhasLotacaoService } from '../services/linhas-lotacao.service';
 import { Router } from '@angular/router';
 
 @Component({
