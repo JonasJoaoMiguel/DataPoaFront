@@ -11,4 +11,10 @@ export class LinhasLotacaoService {
   buscar() {
     return this.http.get<any[]>(`${this.linhaUrl}`);
   }
+
+  buscarNome(nome: string) {
+    this.linhaUrl = this.linhaUrl.concat('/filter?nome=');
+    return this.http.get<any[]>(`${this.linhaUrl.concat(nome)}`);
+  }
+
 }

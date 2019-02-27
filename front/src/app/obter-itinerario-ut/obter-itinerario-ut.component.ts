@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ObterItinerarioService } from '../services/obter-itinerario.service';
-import { FormsModule, FormGroup } from '@angular/forms';
-import { PocForm } from '../forms/poc-form';
+import { FormGroup } from '@angular/forms';
+import { IdForm } from '../forms/IdForm';
 
 @Component({
   selector: 'app-obter-itinerario-ut',
@@ -11,20 +11,19 @@ import { PocForm } from '../forms/poc-form';
 export class ObterItinerarioUtComponent implements OnInit {
 
   itinerarios: Array<any>;
-
-  public teste: FormGroup;
+  public form: FormGroup;
 
   constructor(
     private obterItinerarioService: ObterItinerarioService,
-    private pocForm: PocForm) {
-      this.teste = this.pocForm.createForm();
+    private idForm: IdForm) {
+      this.form = this.idForm.createForm();
     }
 
   ngOnInit() {
   }
 
   buscar() {
-    const id = this.teste.controls.id.value;
+    const id = this.form.controls.id.value;
     this.obterItinerarioService.buscarUT(id).subscribe(dados => this.itinerarios = dados);
   }
 

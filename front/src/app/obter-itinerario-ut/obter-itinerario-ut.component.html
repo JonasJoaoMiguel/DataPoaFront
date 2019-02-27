@@ -1,8 +1,11 @@
 <div class="ibox-content">
-    <form [formGroup]="teste">
+    <label>
+                <h3>Obter Itinerário de UT</h3>
+        </label>
+    <form [formGroup]="form">
         <div class="input-group">
             <span>
-                <button class="btn btn-primary btn-sm" (click)="buscar()">Obter Itinerario de UT</button>
+                <button class="btn btn-primary btn-sm" (click)="buscar()">Buscar por ID</button>
             </span>
             <input type="text" formControlName="id" placeholder="Digite aqui o id da UT">
         </div>

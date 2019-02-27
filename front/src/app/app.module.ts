@@ -10,7 +10,9 @@ import { ObterItinerarioUtComponent } from './obter-itinerario-ut/obter-itinerar
 import { LinhasOnibusService } from './services/linhas-onibus.service';
 import { LinhasLotacaoService } from './services/linhas-lotacao.service';
 import { ObterItinerarioService } from './services/obter-itinerario.service';
-import { PocForm } from './forms/poc-form';
+import { IdForm } from './forms/IdForm';
+import { NomeOnibusForm } from './forms/NomeOnibusForm';
+import { NomeLotacaoForm } from './forms/NomeLotacaoForm';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PocForm } from './forms/poc-form';
     LinhasOnibusService,
     LinhasLotacaoService,
     ObterItinerarioService,
-    PocForm
+    IdForm,
+    NomeOnibusForm,
+    NomeLotacaoForm
   ],
   bootstrap: [AppComponent]
 })

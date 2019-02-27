@@ -1,7 +1,28 @@
 <div class="ibox-content">
-    <button class="btn btn-primary btn-sm" type="button" (click)="buscar()">
-        Linha de Ônibus    
-    </button>
+    <label>
+            <h3>Linhas de Ônibus</h3>
+    </label>
+    <div class="row justify-content-center">
+        <div class="col">
+            <button class="btn btn-primary btn-sm" type="button" (click)="buscar()">
+            Listar todas
+            </button>
+        </div>
+        <form [formGroup]="form">
+            <div class="col">
+                <div class="input-group">
+                    <span>
+                        <button class="btn btn-primary btn-sm" type="button" (click)="buscarNome()">
+                            Buscar por nome
+                        </button>
+                    </span>
+                    <input type="text" formControlName="nome" placeholder="Digite o nome da Linha">
+                </div>
+            </div>
+        </form>
+    </div>
+
+
     <!--<button class="btn btn-primary" type="button" (click)="ngOnInit()">Voltar</button>-->
     <table class="table">
         <thead>

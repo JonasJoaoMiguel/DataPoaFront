@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LinhasLotacaoService } from '../services/linhas-lotacao.service';
-import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
+import { NomeLotacaoForm } from '../forms/NomeLotacaoForm';
 
 @Component({
   selector: 'app-lista-linha-lotacao',
@@ -10,14 +11,21 @@ import { Router } from '@angular/router';
 export class ListaLinhaLotacaoComponent implements OnInit {
 
   linhas: Array<any>;
+  public form: FormGroup;
 
   constructor(
-    private linhaLotacaoService: LinhasLotacaoService/*,
-    private router: Router*/) { }
+    private linhaLotacaoService: LinhasLotacaoService,
+    private nomeForm: NomeLotacaoForm) {
+      this.form = this.nomeForm.createForm();
+    }
 
   ngOnInit() {
   }
 
+  buscarNome() {
+    const nome = this.form.controls.nome.value;
+    this.linhaLotacaoService.buscarNome(nome).subscribe(dados => this.linhas = dados);
+  }
   buscar() {
     this.linhaLotacaoService.buscar().subscribe(dados => this.linhas = dados);
   }
