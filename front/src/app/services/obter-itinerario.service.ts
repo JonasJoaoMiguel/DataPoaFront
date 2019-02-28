@@ -4,12 +4,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ObterItinerarioService {
 
-  itinerarioUrl = 'http://localhost:8080/itinerarios/itinerario/idlinha/';
+  itinerarioUrl = 'http://www.poatransporte.com.br/php/facades/process.php?a=il&p=';
 
   constructor(private http: HttpClient) { }
 
   buscarUT(id: string) {
-    console.log(id);
     return this.http.get<any[]>(`${this.itinerarioUrl.concat(id)}`);
   }
 

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class LinhasOnibusService {
 
-  linhaUrl = 'http://localhost:8080/linhasonibus/linhaonibus';
+  linhaUrl = 'http://www.poatransporte.com.br/php/facades/process.php?a=nc&p=%&t=o';
 
   constructor(private http: HttpClient) { }
 

@@ -1,24 +1,125 @@
 <div class="container mt-3 text-center ">
     <h1>PoC DataPoa Dimed</h1>
     <p>Página de integração com Api DataPoa</p>
-    <!--<link src="http://www.datapoa.com.br/dataset/poatransporte/resource/bc69456c-1fff-4e6f-875b-c3e6d7163c3c" />-->
 </div>
-<div class="container align-content-center">
-    <div class="row">
-        <div class="col-sm">
-            <nav class="navbar navbar-default">
-                <app-lista-linha-onibus class="nav-link"></app-lista-linha-onibus>
-            </nav>
+<div class="container">
+    <div class="row" id="menu">
+        <div class="col">
+            <label>
+                        <h3>Linhas de Lotação</h3>
+                    </label>
+            <div class="row justify-content-center">
+                <div class="col">
+                    <button class="btn btn-primary btn-sm" type="button" (click)="buscarLotacao()">
+                        Listar todas   
+                        </button>
+                </div>
+                <form [formGroup]="formLotacao">
+                    <div class="col">
+                        <div class="input-group">
+                            <span>
+                                    <button class="btn btn-primary btn-sm" type="button" (click)="buscarNomeLotacao()">
+                                        Buscar por nome  
+                                    </button>
+                                </span>
+                            <input type="text" formControlName="nome" placeholder="Digite o nome da Linha">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="col-sm">
-            <nav class="navbar navbar-default">
-                <app-lista-linha-lotacao class="nav-link"></app-lista-linha-lotacao>
-            </nav>
+        <div class="col">
+            <label>
+                        <h3>Linhas de Ônibus</h3>
+                </label>
+            <div class="row justify-content-center">
+                <div class="col">
+                    <button class="btn btn-primary btn-sm" type="button" (click)="buscarOnibus()">
+                        Listar todas
+                        </button>
+                </div>
+                <form [formGroup]="formOnibus">
+                    <div class="col">
+                        <div class="input-group">
+                            <span>
+                                    <button class="btn btn-primary btn-sm" type="button" (click)="buscarNomeOnibus()">
+                                        Buscar por nome
+                                    </button>
+                                </span>
+                            <input type="text" formControlName="nome" placeholder="Digite o nome da Linha">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="col-sm">
-            <nav class="navbar navbar-default">
-                <app-obter-itinerario-ut class="nav-link"></app-obter-itinerario-ut>
-            </nav>
+        <div class="col">
+            <label>
+                        <h3>Obter Itinerário de UT</h3>
+                </label>
+            <form [formGroup]="formItinerario">
+                <div class="input-group">
+                    <span>
+                        <button class="btn btn-primary btn-sm" (click)="buscarItinerario()">Buscar por ID</button>
+                    </span>
+                    <input type="text" formControlName="id" placeholder="Digite aqui o id da UT">
+                </div>
+            </form>
         </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr *ngIf="linhasOnibus">
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>CODIGO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let l of linhasOnibus">
+                    <td>{{l.id}}</td>
+                    <td>{{l.nome}}</td>
+                    <td>{{l.codigo}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr *ngIf="linhasLotacao">
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>CODIGO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let l of linhasLotacao">
+                    <td>{{l.id}}</td>
+                    <td>{{l.nome}}</td>
+                    <td>{{l.codigo}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr *ngIf="itinerarios">
+                    <th>ID LINHA</th>
+                    <th>NOME</th>
+                    <th>CODIGO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="itinerarios">
+                    <td>{{itinerarios.idlinha}}</td>
+                    <td>{{itinerarios.nome}}</td>
+                    <td>{{itinerarios.codigo}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

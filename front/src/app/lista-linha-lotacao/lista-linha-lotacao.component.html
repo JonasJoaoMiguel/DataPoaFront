@@ -1,42 +1,19 @@
 <div class="ibox-content">
-    <label>
-            <h3>Linhas de Lotação</h3>
-        </label>
-    <div class="row justify-content-center">
-        <div class="col">
-            <button class="btn btn-primary btn-sm" type="button" (click)="buscar()">
-            Listar todas   
-            </button>
-        </div>
-        <form [formGroup]="form">
-            <div class="col">
-                <div class="input-group">
-                    <span>
-                        <button class="btn btn-primary btn-sm" type="button" (click)="buscarNome()">
-                            Buscar por nome  
-                        </button>
-                    </span>
-                    <input type="text" formControlName="nome" placeholder="Digite o nome da Linha">
-                </div>
-            </div>
-        </form>
-    </div>
 
-
-    <table class="table">
-        <thead>
-            <tr *ngIf="linhas">
-                <th>ID</th>
-                <th>NOME</th>
-                <th>CODIGO</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let l of linhas">
-                <td>{{l.id}}</td>
-                <td>{{l.nome}}</td>
-                <td>{{l.codigo}}</td>
-            </tr>
-        </tbody>
-    </table>
 </div>
+<table class="table">
+    <thead>
+        <tr *ngIf="linhas">
+            <th>ID</th>
+            <th>NOME</th>
+            <th>CODIGO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let l of linhas">
+            <td>{{l.id}}</td>
+            <td>{{l.nome}}</td>
+            <td>{{l.codigo}}</td>
+        </tr>
+    </tbody>
+</table>

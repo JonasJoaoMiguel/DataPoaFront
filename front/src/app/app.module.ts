@@ -13,6 +13,9 @@ import { ObterItinerarioService } from './services/obter-itinerario.service';
 import { IdForm } from './forms/IdForm';
 import { NomeOnibusForm } from './forms/NomeOnibusForm';
 import { NomeLotacaoForm } from './forms/NomeLotacaoForm';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [];
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { NomeLotacaoForm } from './forms/NomeLotacaoForm';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     LinhasOnibusService,
