@@ -8,7 +8,8 @@ export class NomeLotacaoForm {
 
     public createForm(): FormGroup {
         return this.formBuilder.group({
-            nome: this.formBuilder.control('', [])
+            nome: this.formBuilder.control('', []),
+            url: this.formBuilder.control('', [])
         });
     }
 }

@@ -35,6 +35,9 @@ export class AppComponent {
   }
 
   buscarNomeLotacao() {
+    this.linhasOnibus = null;
+    this.linhasLotacao = null;
+    this.itinerarios = null;
     const nome = this.formLotacao.controls.nome.value;
     this.linhaLotacaoService.buscarNome(nome).subscribe(dados => this.linhasLotacao = dados);
   }
@@ -46,6 +49,9 @@ export class AppComponent {
   }
 
   buscarNomeOnibus() {
+    this.linhasOnibus = null;
+    this.linhasLotacao = null;
+    this.itinerarios = null;
     const nome = this.formOnibus.controls.nome.value;
     this.linhaOnibusService.buscarNome(nome).subscribe(dados => this.linhasOnibus = dados);
   }
